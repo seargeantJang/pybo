@@ -4,6 +4,8 @@ from django.db.models import Q, Count
 
 from ..models import Question
 
+import logging
+logger = logging.getLogger('pybo')
 
 def index(request):
     3/0
@@ -14,7 +16,7 @@ def index(request):
     page = request.GET.get('page', '1')  # 페이지
     kw = request.GET.get('kw', '') # 검색어
     so = request.GET.get('so', 'recent') #정렬 기준
-
+    logger.info("INFO 레벨로 출력")
 
     # 정렬
     if so == 'recommend':
